@@ -8,6 +8,6 @@ describe('MongoDB connection', () => {
 
     it('connects successfully to MongoDB Atlas', async () => {
         await mongoose.connect(process.env.MONGODB_URI);
-        expect(mongoose.connection.readyState).toBe(1); // 1 = connected
-    });
+        expect(mongoose.connection.readyState).toBe(1);
+    }, 15000);
 });
